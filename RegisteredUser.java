@@ -14,9 +14,26 @@ public class RegisteredUser extends User
 		password = pass;
 	}
 	
-	public void login(String username, String password)
+	public String getUsername()
 	{
-		
+		return username;
+	}
+	
+	public int getUserID()
+	{
+		return userID;
+	}
+	
+	public boolean login(String password)
+	{
+		if(this.password.equals(password))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	public void logout()
