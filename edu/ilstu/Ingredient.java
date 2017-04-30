@@ -2,9 +2,11 @@ package edu.ilstu;
 public class Ingredient 
 {
 
+	private static int ingredientIDCount = 1;
 	private int ingredientID;
 	private String name;
 	private String foodGroup;
+	private double price;
 	private double avgPrice;
 	private int quantity;
 	
@@ -12,13 +14,18 @@ public class Ingredient
 	{
 		this.name = name;
 		this.quantity = quantity;
+		ingredientID = ingredientIDCount;
+		ingredientIDCount++;
 	}
+	
 	
 	public Ingredient(String name, int quantity, String foodGroup)
 	{
 		this.name = name;
 		this.quantity = quantity;
 		this.foodGroup = foodGroup;
+		ingredientID = ingredientIDCount;
+		ingredientIDCount++;
 	}
 	
 	public int getId()

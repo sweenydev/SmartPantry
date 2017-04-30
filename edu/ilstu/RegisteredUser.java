@@ -15,6 +15,10 @@ public class RegisteredUser extends User
 	
 	
 	
+	public List<MealPosting> getSocialPostings() {
+		return socialPostings;
+	}
+
 	public RegisteredUser(String name, String pass)
 	{
 		userID = userIDCount;
@@ -68,10 +72,27 @@ public class RegisteredUser extends User
 			}
 		}
 	}
-
-	public void logout()
+	
+	public void shareMealPosting(MealPosting mealPosting)
 	{
+		myPostings.add(mealPosting);
 		
+		for(int userCount = 0; userCount < friendList.size(); userCount++)
+		{
+		RegisteredUser activeUser = friendList.get(userCount);
+		activeUser.getSocialPostings().add(mealPosting);
+		}
+	}
+
+	public void removeMealPosting(MealPosting mealPosting)
+	{
+		myPostings.add(mealPosting);
+		
+		for(int userCount = 0; userCount < friendList.size(); userCount++)
+		{
+		RegisteredUser activeUser = friendList.get(userCount);
+		activeUser.getSocialPostings().add(mealPosting);
+		}
 	}
 	
 }
