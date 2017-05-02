@@ -60,6 +60,23 @@ public class RegisteredUserDA
 		return null;//Returns nothing if there are no matches
 	}
 	
+	public RegisteredUser getUser(int id)
+	{
+		for(int userCount = 0; userCount < userList.size(); userCount++)
+		{
+			if(userList.get(userCount).getUserID() == id)
+			{
+				return userList.get(userCount);
+			}
+		}
+		return null; //Returns nothing if there are no matches
+	}
+	
+	public RegisteredUser getCurrentUser()
+	{
+		return getUser(currentUser);
+	}
+	
 	public void removeUserAccount(String userName)
 	{
 		
