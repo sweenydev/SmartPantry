@@ -108,6 +108,21 @@ public class RegisteredUser extends User
 		activeFriend.getSocialPostings().add(mealPosting);
 		}
 	}
+	
+	public void editMealPosting(MealPosting mealPosting)
+	{
+		
+		for(int userCount = 0; userCount < myPostings.size(); userCount++)
+		{
+		
+		if(myPostings.get(userCount).getMealPostingID() == mealPosting.getMealPostingID());
+		{
+			mealPosting = myPostings.get(userCount);
+			
+		}
+		
+		}
+	}
 
 	public void removeMealPosting(MealPosting mealPosting)
 	{

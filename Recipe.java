@@ -24,8 +24,8 @@ public class Recipe
 	{
 		this.name = name;
 		recipeIngredients = ingredients;
-		recipeID = recipeIDCount;
-		recipeIDCount++;
+		recipeID = getRecipeIDCount();
+		setRecipeIDCount(getRecipeIDCount() + 1);
 	}
 	
 	public double getRating() {
@@ -61,6 +61,30 @@ public class Recipe
 
 	public String getMealType() {
 		return mealType;
+	}
+
+	public void setRecipeID(int recipeID) {
+		this.recipeID = recipeID;
+	}
+
+	public static int getRecipeIDCount() {
+		return recipeIDCount;
+	}
+
+	public static void setRecipeIDCount(int recipeIDCount) {
+		Recipe.recipeIDCount = recipeIDCount;
+	}
+
+	public ArrayList<Ingredient> getRecipeIngredients() {
+		return recipeIngredients;
+	}
+
+	public void setRecipeIngredients(ArrayList<Ingredient> recipeIngredients) {
+		this.recipeIngredients = recipeIngredients;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	

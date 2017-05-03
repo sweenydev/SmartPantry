@@ -33,6 +33,24 @@ public class RecipeDA
 		}
 	}
 	
+	public void editRecipe(int recipeId, String name, ArrayList<Ingredient> ingredientList)
+	{
+		Recipe recipe = recipeList.get(recipeId);
+		if(recipe.getName().equals(name) && recipe.getRecipeIngredients().equals(ingredientList) )
+		{
+			
+		}
+		
+		else
+		{
+			recipe.setName(name);
+			recipe.setRecipeIngredients(ingredientList);
+			int count = Recipe.getRecipeIDCount();
+			recipe.setRecipeID(count);
+			recipe.setRecipeIDCount(count+1);
+		}
+	}
+	
 	
 	public void removeRecipe(Recipe recipe)
 	{

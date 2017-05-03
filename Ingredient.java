@@ -7,6 +7,7 @@ public class Ingredient
 	private String name;
 	private double price;
 	private int quantity;
+	private boolean includeInSearch;
 	
 	public Ingredient(String name, int quantity, double price)
 	{
@@ -66,5 +67,11 @@ public class Ingredient
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
+
+	public void setIncludeInSearch(boolean includeInSearch) {
+		this.includeInSearch = includeInSearch;
+	}
+	
 	
 }

@@ -29,7 +29,22 @@ public class IngredientDA
 		
 		if(getIngredient(ingredientBuffer) == null)
 		{
+			ingredient.setQuantity(1);
 			ingredientList.add(ingredient);
+		}
+	}
+	
+	public void editIngredient(int ingredientId, String name)
+	{
+		Ingredient ingredient = ingredientList.get(ingredientId);
+		if(ingredient.getName().equals(name))
+		{
+			
+		}
+		
+		else
+		{
+			ingredient.setName(name);
 		}
 	}
 	
