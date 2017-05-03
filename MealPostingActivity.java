@@ -18,7 +18,20 @@ public class MealPostingActivity extends AppCompatActivity {
 
         LinearLayout mLayout = (LinearLayout)findViewById(R.id.activity_meal_posting);
 
-        MealPosting currentPosting = new MealPosting(); // Set current meal posting here
+        Ingredient broccoli = new Ingredient("Broccoli", 1);
+        Ingredient carrot = new Ingredient("Carrot", 1);
+        Ingredient beef = new Ingredient("Beef", 1);
+        Ingredient broth = new Ingredient("Broth", 1);
+        Ingredient salt = new Ingredient("Salt", 1);
+        ArrayList<Ingredient> ingredientListOne = new ArrayList<Ingredient>();
+        ingredientListOne.add(broccoli);
+        ingredientListOne.add(carrot);
+        ingredientListOne.add(beef);
+        ingredientListOne.add(broth);
+        ingredientListOne.add(salt);
+        Recipe recipeOne = new Recipe("Stew", ingredientListOne);
+        
+        MealPosting currentPosting = new MealPosting(recipeOne, "My Beef Stew", "555 Example St"); // Set current meal posting here
         Recipe recipeDisplayed = currentPosting.getPostingRecipe();
 
         TextView postTitle = (TextView)findViewById(R.id.meal_posting_title);
