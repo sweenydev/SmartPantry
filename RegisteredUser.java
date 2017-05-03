@@ -6,16 +6,19 @@ public class RegisteredUser extends User
 {
 
 	private static int userIDCount = 1;
+	public static int currentUser = 0;
 	private int userID;
 	private String username;
 	private String password;
 	private List<RegisteredUser> friendList;
 	private List<MealPosting> myPostings;
 	private List<MealPosting> socialPostings;
-	private MyRecipes myRecipes;
+	
+
 	
 	
 	
+
 	public List<MealPosting> getSocialPostings() {
 		return socialPostings;
 	}
@@ -27,9 +30,9 @@ public class RegisteredUser extends User
 		username = name;
 		password = pass;
 		
-		
 	
 	}
+	
 	
 	public String getUsername()
 	{
@@ -41,7 +44,29 @@ public class RegisteredUser extends User
 		return userID;
 	}
 	
-	public boolean login(String password)
+	public boolean login(String username, String password)
+	{
+		RegisteredUser tempUser = RegisteredUserDA.getUser(username);
+		
+		if(tempUser != null)
+		{
+			if(tempUser.checkPassword(password))
+			{
+				currentUser = tempUser.getUserID();
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	private boolean checkPassword(String password)
 	{
 		if(this.password.equals(password))
 		{
@@ -56,8 +81,7 @@ public class RegisteredUser extends User
 	
 	public void addFriend(String userName)
 	{
-		RegisteredUserDA userList = new RegisteredUserDA();
-		RegisteredUser newFriend = userList.getUser(userName);
+		RegisteredUser newFriend = RegisteredUserDA.getUser(userName);
 		friendList.add(newFriend);
 		
 	}
@@ -107,6 +131,13 @@ public class RegisteredUser extends User
 				}
 		}
 		}
-	}
+		
+		}
 	
+	public void logout()
+	{
+		currentUser = 0;
+	}
+
+
 }

@@ -1,11 +1,10 @@
 package edu.ilstu;
 import java.util.ArrayList;
-import java.util.List;
 
 public class RegisteredUserDA
 {
 	private static ArrayList<RegisteredUser> userList;
-	private int currentUser;
+	
 	
 	public RegisteredUserDA()
 	{
@@ -21,34 +20,8 @@ public class RegisteredUserDA
 		}
 	}
 	
-	public boolean login(String username, String password)
-	{
-		RegisteredUser tempUser = getUser(username);
-		
-		if(tempUser != null)
-		{
-			if(tempUser.login(password))
-			{
-				currentUser = tempUser.getUserID();
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		else
-		{
-			return false;
-		}
-	}
 	
-	public void logout()
-	{
-		currentUser = 0;
-	}
-	
-	public RegisteredUser getUser(String username)
+	public static RegisteredUser getUser(String username)
 	{
 		for(int userCount = 0; userCount < userList.size(); userCount++)
 		{

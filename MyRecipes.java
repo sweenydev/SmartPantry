@@ -4,24 +4,61 @@ import java.util.ArrayList;
 public class MyRecipes {
 
 	private ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
+	private ArrayList<Recipe> favoriteRecipes = new ArrayList<Recipe>();
 	
-	
-	private void addRecipe(Recipe recipe)
+	public MyRecipes()
 	{
-		recipeList.add(recipe);
+		recipeList = new ArrayList<Recipe>();
 	}
+	
+	public Recipe getRecipe(int recipeID)
+	{
+		for(int userCount = 0; userCount < recipeList.size(); userCount++)
+		{
+			if(recipeList.get(userCount).getRecipeID() == recipeID)
+			{
+				return recipeList.get(userCount);
+			}
+		}
+		return null;//Returns nothing if there are no matches
+	}
+	
+	
+	public void addRecipe(Recipe recipe)
+	{
+		int recipeBuffer = recipe.getRecipeID();
+		
+		if(getRecipe(recipeBuffer) == null)
+		{
+			recipeList.add(recipe);
+		}
+	}
+	
+	
+	public void removeRecipe(Recipe recipe)
+	{
+		
+		for(int userCount = 0; userCount < recipeList.size(); userCount++)
+		{
+			if(recipeList.get(userCount).getRecipeID()== recipe.getRecipeID())
+			{
+				recipeList.remove(userCount);
+			}
+		}	
+	}
+	
 	
 	private void editRecipe(Recipe recipe)
 	{
 		
 	}
+
 	
-	private void deleteRecipe(Recipe recipe)
+	private void addFavorite(Recipe recipe)
 	{
-		int recipeID = recipe.getRecipeID();
-		
-				
+		favoriteRecipes.add(recipe);
 	}
+	
 	
 	
 	public ArrayList<Recipe> getPossibleRecipes(ArrayList<Ingredient> ingredientList)

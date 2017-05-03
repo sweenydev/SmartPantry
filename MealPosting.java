@@ -11,7 +11,8 @@ public class MealPosting {
 	private Recipe postingRecipe;
 	private String name;
 	private int rsvpNumber;
-	private ArrayList<RegisteredUser> rsvpList = new ArrayList<RegisteredUser>(); 
+	private ArrayList<RegisteredUser> rsvpList = new ArrayList<RegisteredUser>();
+	private boolean isVegetarian;
 	
 	public int getMealPostingID() {
 		return mealPostingID;
@@ -36,6 +37,7 @@ public class MealPosting {
 		this.postingRecipe = postingRecipe;
 		this.name = name;
 		time = Calendar.getInstance();
+		this.isVegetarian = postingRecipe.isVegetarian();
 		mealPostingID = mealPostingIDCount;
 		mealPostingIDCount++;	
 	}

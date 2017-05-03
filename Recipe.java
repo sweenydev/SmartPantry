@@ -8,7 +8,18 @@ public class Recipe
 	private String name;
 	private ArrayList<Ingredient> recipeIngredients = new ArrayList<Ingredient>();
 	private double rating;
+	private boolean isVegetarian;
+	private String mealType;
+	private int time;
 	
+	public int getTime() {
+		return time;
+	}
+
+	public boolean isVegetarian() {
+		return isVegetarian;
+	}
+
 	public Recipe(String name, ArrayList<Ingredient> ingredients)
 	{
 		this.name = name;
@@ -47,5 +58,10 @@ public class Recipe
 		}
 		return isPossible;
 	}
+
+	public String getMealType() {
+		return mealType;
+	}
+
 	
 }
