@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">SmartPantry</string>
-    <string name="recipe_name">RecipeName</string>
-    <string name="rating">Rating: </string>
-    <string name="action_settings">Settings</string>
+    <string name="favorite_button">Favorite</string>
+    <string name="rsvp_button">RSVP</string>
 </resources>

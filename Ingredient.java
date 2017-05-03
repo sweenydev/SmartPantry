@@ -1,4 +1,4 @@
-package com.example.srliebi.smartpantry;
+package com.example.steve.smartpantry;
 
 public class Ingredient
 {

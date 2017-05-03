@@ -1,4 +1,4 @@
-package com.example.srliebi.smartpantry;
+package com.example.steve.smartpantry;
 
 import java.util.ArrayList;
 
@@ -33,6 +33,11 @@ public class Recipe
     public String getName()
     {
         return name;
+    }
+
+    public ArrayList<Ingredient> getRecipeIngredients()
+    {
+        return recipeIngredients;
     }
 
     public boolean contains(Ingredient ingredient)
