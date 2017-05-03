@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/meal_posting_time"
         android:padding="10dp"
-        android:text="time"/>
+        android:text="Time: 10:00 pm"/>
 
     <TextView
         android:layout_width="wrap_content"
