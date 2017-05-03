@@ -19,9 +19,14 @@ public class RecipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
 
         LinearLayout mLayout = (LinearLayout)findViewById(R.id.activity_recipe);
+        
+        ArrayList<Ingredient> ingredientListCake = new ArrayList<Ingredient>();
+        ingredientListCake.add(new Ingredient("Flour", 1));
+        ingredientListCake.add(new Ingredient("Cocoa powder", 1));
+        ingredientListCake.add(new Ingredient("Egg", 2));
+        ingredientListCake.add(new Ingredient("Butter", 1));
 
-        //Recipe currentRecipe = new Recipe(); // Recipe being viewed generates here
-        Recipe currentRecipe = new Recipe("name", new ArrayList<Ingredient>());
+        Recipe currentRecipe = new Recipe("Chocolate Cake", ingredientListCake);
         TextView recipeName = new TextView(this);
         recipeName.setText(currentRecipe.getName());
         recipeName.setTextSize(50);
